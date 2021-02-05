@@ -43,10 +43,7 @@ document.querySelector('.super-stats').addEventListener('change', e => {
   console.log(clicked);
   console.log(clickedType);
 
-  const formSection = document.querySelectorAll("input");
-
-  //console.log(formSection);
-
+  
   // 4) Loop over the checkbox input elements
   for (let i = 0; i <checkboxes.length; i++ ) {
     // 5) In the loop, create a variable named `checkboxType` to store the `data-type` attribute of the `checkboxes[i]` in the loop's current iteration = `checkboxes[i].getAttribute('data-type');`
