@@ -21,7 +21,7 @@
 /* Variable to store all the checkboxes - You will use this in the event listener below to create a loop */
 const checkboxes = document.querySelectorAll('.super-stats input');
 
-console.log(checkboxes);
+//console.log(checkboxes);
 /**
  * Event listener for checkboxes
  */
@@ -32,7 +32,7 @@ document.querySelector('.super-stats').addEventListener('change', e => {
   // 1) Create a variable named clicked to store the checkbox input that was just clicked
   //    - `e.target` will be helpful here
 
-  const clicked = e.target.value;
+  const clicked = e.target;
   
   // 2) Create a variable named clickedType to store the `data-type` attribute of the checkbox that was just clicked
   //    - the `getAttribute` method will be helpful here
@@ -48,7 +48,7 @@ document.querySelector('.super-stats').addEventListener('change', e => {
   for (let i = 0; i <checkboxes.length; i++ ) {
     // 5) In the loop, create a variable named `checkboxType` to store the `data-type` attribute of the `checkboxes[i]` in the loop's current iteration = `checkboxes[i].getAttribute('data-type');`
     const checkboxType = checkboxes[i].getAttribute('data-type');
-    //console.log(checkboxType);
+    console.log(checkboxType);
     console.log(checkboxes[i]);
     // 6) Create an `if` statement to check which items to disable/enable.  The if statement needs two conditions: 
     //    - We only want to disable/enable the item if it has the same 'data-type' as the item that was checked/unchecked, 
@@ -62,13 +62,13 @@ document.querySelector('.super-stats').addEventListener('change', e => {
       //    - That condition will look something like this - `(clicked.checked)`;
           if (clicked.checked === true) {
       // 8) If the `clicked` checkbox is `checked`, use dot notation to set the `disabled` property of `checkboxes[i]` to true
-          checkboxes[i].disabled === true
+          checkboxes[i].disabled = true
       // 9) Else, set the `disabled` property of `checkboxes[i]` to false
           } else {
-            checkboxes[i].disabled === false
+            checkboxes[i].disabled = false
           }
     }
-  }
+  } 
 
   /* Helpful log statement to test that the listener is working - feel free to delete this or comment it out */
   console.log("The checkboxes' change event listener is functional!");
